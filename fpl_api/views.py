@@ -9,11 +9,11 @@ def fpl_page(request):
 
 @api_view(['GET'])
 def fpl_api(request):
-    response = requests.get("https://fantasy.premierleague.com/api/fixtures/")
+    response = requests.get("https://fixturedownload.com/feed/json/epl-2022")
     return JsonResponse(response.json(), safe=False)
 
 class FPLAPI(generics.ListAPIView):
-    queryset = requests.get("https://fantasy.premierleague.com/api/fixtures/")
+    queryset = requests.get("https://fixturedownload.com/feed/json/epl-2022")
 
 
 # Create your views here.
